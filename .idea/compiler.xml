@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Book-Stock8500" />
+        <module name="Book-CustomerInfo8400" />
+        <module name="Book-Gateway5000" />
+        <module name="Book-Order8200" />
+        <module name="Book-Test1000" />
+        <module name="Book-Account8300" />
+        <module name="Book-Common" />
+        <module name="Book-Customer8100" />
+        <module name="Book-Book8000" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Book-Customer" target="1.8" />
+      <module name="Book-CustomerAccount" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Book-Account8300" options="-parameters" />
+      <module name="Book-Book8000" options="-parameters" />
+      <module name="Book-Common" options="-parameters" />
+      <module name="Book-Customer" options="-parameters" />
+      <module name="Book-Customer8100" options="-parameters" />
+      <module name="Book-CustomerAccount" options="-parameters" />
+      <module name="Book-CustomerInfo8400" options="-parameters" />
+      <module name="Book-Gateway5000" options="-parameters" />
+      <module name="Book-Order8200" options="-parameters" />
+      <module name="Book-Stock8500" options="-parameters" />
+      <module name="Book-Test1000" options="-parameters" />
+    </option>
+  </component>
+</project>

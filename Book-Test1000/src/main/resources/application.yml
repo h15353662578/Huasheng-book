@@ -1,0 +1,27 @@
+server:
+  port: 1000
+
+spring:
+  application:
+    name: user-storage-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: hs_tx_group
+    nacos:
+      discovery:
+        server-addr: 192.168.195.129:90
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:8066/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 000000
+
+logging:
+  level:
+    io:
+      seata: info
+
+feign:
+  hystrix:
+    enabled: false

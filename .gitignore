@@ -1,0 +1,11 @@
+# Project exclude paths
+/Book-Account8300/target/
+/Book-Book8000/target/
+/Book-Common/target/
+/Book-Customer8100/target/
+/Book-CustomerInfo8400/target/
+/Book-Gateway5000/target/
+/Book-Order8200/target/
+/Book-Stock8500/target/
+/Book-Test1000/target/
+/target/

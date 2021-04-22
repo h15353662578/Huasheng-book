@@ -1,0 +1,58 @@
+server:
+  port: 8400
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.195.129:8066/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password:
+    typeEnum: com.alibaba.druid.pool.DruidDataSource
+    maxActive: 1000
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  application:
+    name: customer-info-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: hs_tx_group
+    nacos:
+      discovery:
+        server-addr: 192.168.195.129:90
+        service: customer-info-service
+logging:
+  level:
+    io:
+      seata: info
+
+dubbo:
+  protocol: # name:采用的协议名称 port:-1代表自动选择端口
+    port: -1
+    name: dubbo
+  scan: # dubbo服务路径
+    base-packages: com.hs.customerInfo
+  application:
+    name: customer-info-service #注册服务名称
+    qos-enable: false #关闭dubbo在线运维工具
+  registry:
+    address: nacos://192.168.195.129:90 #挂载到Nacos注册中心
+  cloud:
+    subscribed-services: / #订阅的服务名称，默认订阅所有服务，provider无须订阅服务所以配置为
+
+feign:
+  hystrix:
+    enabled: false
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
