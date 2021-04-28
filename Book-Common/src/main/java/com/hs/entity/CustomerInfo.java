@@ -1,6 +1,7 @@
 package com.hs.entity;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -23,6 +24,7 @@ public class CustomerInfo implements Serializable {
 
     private String address;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
 
     private String customerName;

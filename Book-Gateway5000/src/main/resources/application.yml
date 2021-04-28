@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.195.129:90
+        server-addr: 192.168.195.129:8848
         service: gateway-service
     gateway:
       routes: # 路由数组
