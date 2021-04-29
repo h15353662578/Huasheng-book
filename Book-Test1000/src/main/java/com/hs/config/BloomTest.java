@@ -4,11 +4,6 @@ import org.redisson.Redisson;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.StringRedisTemplate;
-
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author Huasheng
@@ -28,6 +23,5 @@ public class BloomTest {
         bloomFilter.add("bob");
         System.out.println(bloomFilter.contains("bob"));
         System.out.println(bloomFilter.contains("hello"));
-
     }
 }
