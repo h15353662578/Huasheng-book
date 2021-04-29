@@ -33,5 +33,4 @@ public class RedisConfig {
                 "redis://192.168.195.129:6375","redis://192.168.195.129:6377").setPassword("000000").setScanInterval(5000);
         return (Redisson) Redisson.create(config);
     }
-
 }

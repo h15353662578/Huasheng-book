@@ -23,4 +23,13 @@ public interface TestMapper {
 
     @Select("select stock from test where id = #{id}")
     public int Select(String id);
+
+    @Update("update test set stock =stock-1,version = version + 1 where id = #{id}")
+    public Integer update2(String id);
+
+    @Select("select id,name,version,stock from test where id = #{id}")
+    public List<Test> selectAll(String id);
+
+    @Update("update test set version =0 where id = #{id}")
+    public Integer result(String id);
 }

@@ -2,6 +2,7 @@ package com.hs.service;
 
 import com.hs.entity.Test;
 import com.hs.mapper.TestMapper;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -32,4 +33,19 @@ public class TestServiceImpl implements TestService{
     public int select(String id){
         return testMapper.Select(id);
     }
+
+    @Override
+    public Integer update2(String id) {
+        return testMapper.update2(id);
+    }
+
+    public List<Test> selectAll(String id){
+         return testMapper.selectAll(id);
+    }
+
+    public Integer result(String id){
+        return testMapper.result(id);
+    }
+
+
 }
