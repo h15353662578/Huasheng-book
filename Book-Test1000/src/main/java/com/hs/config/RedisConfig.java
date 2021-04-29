@@ -1,6 +1,8 @@
 package com.hs.config;
 
 import org.redisson.Redisson;
+import org.redisson.api.RBloomFilter;
+import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -15,8 +17,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 @Configuration
 public class RedisConfig {
-    @Value("${spring.redis.host}")
-    private String host;
 
     @Bean(name = {"redisTemplate", "stringRedisTemplate"})
     public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory factory) {

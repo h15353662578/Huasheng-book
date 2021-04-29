@@ -7,12 +7,11 @@ import org.redisson.Redisson;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -81,12 +80,16 @@ public class TestController {
     @Transactional(rollbackFor = Exception.class)
     @GetMapping("/Gong")
     public Integer Gong(String id){
+        Random  r = new Random(100);
         RLock Lock = redissonClient.getFairLock("anyLock");
-//        Lock.lock();
-        Lock.lock(5, TimeUnit.SECONDS);
+        Lock.lock(r.nextLong(), TimeUnit.SECONDS);
+        System.out.println("添加锁");
+        System.out.println("过期时间"+r+"秒");
         testService.update(id);
         Lock.unlock();
+        System.out.println("释放锁");
         return 0;
     }
+
 }
 
