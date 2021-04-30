@@ -1,9 +1,13 @@
 package com.hs.config;
 
+import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnels;
 import org.redisson.Redisson;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+
+import java.util.List;
 
 /**
  * @author Huasheng
@@ -18,10 +22,7 @@ public class BloomTest {
                     "redis://192.168.195.129:6378","redis://192.168.195.129:6377","redis://192.168.195.129:6376",
                     "redis://192.168.195.129:6375","redis://192.168.195.129:6377").setPassword("000000").setScanInterval(5000);
         RedissonClient redissonClient = Redisson.create(config);
-        RBloomFilter<String> bloomFilter = redissonClient.getBloomFilter("name");
-        bloomFilter.tryInit(10L,0.03);
-        bloomFilter.add("bob");
-        System.out.println(bloomFilter.contains("bob"));
-        System.out.println(bloomFilter.contains("hello"));
+        List<Integer> userIdList = redissonClient.getList("userIdList");
+        System.out.println(userIdList.contains("1"));
     }
 }

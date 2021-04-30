@@ -95,5 +95,10 @@
             <artifactId>redisson-spring-data-21</artifactId>
             <version>3.13.6</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
     </dependencies>
 </project>

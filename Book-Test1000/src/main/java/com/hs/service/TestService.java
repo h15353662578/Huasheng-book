@@ -17,11 +17,11 @@ public interface TestService {
 
     public int select(String id);
 
-
     public Integer update2(String id);
 
     public List<Test> selectAll(String id);
 
     public Integer result(String id);
 
+    public List<Integer> findAll();
 }

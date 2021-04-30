@@ -2,6 +2,7 @@ package com.hs.controller;
 
 import com.hs.config.RedissonLock;
 import com.hs.entity.Test;
+import com.hs.service.BloomFilterService;
 import com.hs.service.TestService;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
@@ -30,7 +31,9 @@ public class TestController {
     private RedissonClient redissonClient;
 
     @Resource
-    private Redisson redisson;
+    private BloomFilterService bloomFilterService;
+//    @Resource
+//    private Redisson redisson;
 
     @GetMapping("/TestSelect")
     public List<Test> selectById(String id, Integer stock) {
@@ -90,6 +93,9 @@ public class TestController {
         System.out.println("释放锁");
         return 0;
     }
-
+    @RequestMapping("/bloom")
+    public boolean ifUser(int id){
+        return bloomFilterService.userIdExists(id);
+    }
 }
 

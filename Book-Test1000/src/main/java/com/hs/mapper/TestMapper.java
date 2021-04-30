@@ -32,4 +32,7 @@ public interface TestMapper {
 
     @Update("update test set version =0 where id = #{id}")
     public Integer result(String id);
+
+    @Select("select id from test")
+    public List<Integer> findAll();
 }

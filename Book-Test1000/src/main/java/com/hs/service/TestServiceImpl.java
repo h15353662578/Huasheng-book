@@ -47,5 +47,8 @@ public class TestServiceImpl implements TestService{
         return testMapper.result(id);
     }
 
-
+    @Override
+    public List<Integer> findAll(){
+        return testMapper.findAll();
+    }
 }
