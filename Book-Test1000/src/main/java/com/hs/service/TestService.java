@@ -24,4 +24,10 @@ public interface TestService {
     public Integer result(String id);
 
     public List<Integer> findAll();
+
+    public Integer update3(int id);
+
+    public String insert(Test test);
+
+    public boolean userIdExists(int id);
 }

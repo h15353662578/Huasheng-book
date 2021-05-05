@@ -2,7 +2,7 @@ package com.hs.controller;
 
 import com.hs.config.RedissonLock;
 import com.hs.entity.Test;
-import com.hs.service.BloomFilterService;
+//import com.hs.service.BloomFilterService;
 import com.hs.service.TestService;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
@@ -30,10 +30,9 @@ public class TestController {
     @Resource
     private RedissonClient redissonClient;
 
-    @Resource
-    private BloomFilterService bloomFilterService;
 //    @Resource
-//    private Redisson redisson;
+//    private BloomFilterService bloomFilterService;
+
 
     @GetMapping("/TestSelect")
     public List<Test> selectById(String id, Integer stock) {
@@ -60,7 +59,7 @@ public class TestController {
         int s,v;
         Test test = new Test();
         while (true) {
-            testService.selectAll(id);
+//            testService.selectAll(id);
             List<Test> stock = testService.selectAll(id);
             for (int i=0;i<stock.size();i++){
                 test=stock.get(i);
@@ -95,7 +94,23 @@ public class TestController {
     }
     @RequestMapping("/bloom")
     public boolean ifUser(int id){
-        return bloomFilterService.userIdExists(id);
+        return testService.userIdExists(id);
+    }
+
+    @RequestMapping("/long")
+    @Transactional(rollbackFor = Exception.class)
+    public Object testB(int id){
+       boolean x = testService.userIdExists(id);
+       if (x == true){
+          return testService.update3(id);
+       } else {
+           return "消费失败 该商品不存在";
+       }
+    }
+
+    @GetMapping("/insert")
+    public void insert(Test test){
+        testService.insert(test);
     }
 }
 

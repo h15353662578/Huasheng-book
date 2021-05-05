@@ -3,10 +3,8 @@ package com.hs.config;
 import com.google.common.base.Charsets;
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
-import com.hs.entity.Test;
 import com.hs.service.TestService;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.text.NumberFormat;
 import java.util.*;
@@ -17,9 +15,6 @@ import java.util.*;
  * @Description
  */
 public class BuLongTest {
-
-    @Resource
-    private TestService testService;
 
     private static final int ins = 100000;     //设置十万位
 
