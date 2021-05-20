@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.net.UnknownHostException;
 
 /**
  * @author Huasheng
@@ -22,6 +23,9 @@ public class TestService {
     @Resource
     private JuMeiService juMeiService;
 
+    @Resource
+    private WangShangService wangShangService;
+
     @GetMapping("/test")
     public String test(String url) throws IOException {
         String dsb = netBase64Utils.dsb(url);
@@ -31,5 +35,10 @@ public class TestService {
     @PostMapping("/test2")
     public void sfz(@RequestParam String idCardNo,@RequestParam String name) {
         juMeiService.sfz(idCardNo,name);
+    }
+
+    @GetMapping("/test3")
+    public void findIp(String ip) throws UnknownHostException {
+        wangShangService.findIp(ip);
     }
 }
