@@ -26,6 +26,9 @@ public class TestService {
     @Resource
     private WangShangService wangShangService;
 
+    @Resource
+    private YiiYuan yiiYuan;
+
     @GetMapping("/test")
     public String test(String url) throws IOException {
         String dsb = netBase64Utils.dsb(url);
@@ -40,5 +43,10 @@ public class TestService {
     @GetMapping("/test3")
     public void findIp(String ip) throws UnknownHostException {
         wangShangService.findIp(ip);
+    }
+
+    @GetMapping("/test4")
+    public void weather(String area){
+        yiiYuan.weather(area);
     }
 }
