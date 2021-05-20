@@ -17,7 +17,7 @@ import java.util.List;
 public interface CustomerMapper {
 
 
-    @Select("select * from customer")
+    @Select("select customer_id,customer_name,customer_username,customer_password,customer_ROLE,customer_header from customer")
     public List<Customer> findAllCustomer();
 
     @Insert("insert into customer (customer_name,customer_username,customer_password) values (#{customerName},#{customerUserName},#{customerPassword})")

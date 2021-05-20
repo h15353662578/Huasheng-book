@@ -3,6 +3,7 @@ package com.hs.book.controller;
 import com.hs.book.service.BookService;
 import com.hs.config.CommonResult;
 import com.hs.entity.BookInfo;
+import com.hs.entity.BookInfoVo;
 import io.swagger.annotations.Api;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,8 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping("/findAllBook")
-    public List<BookInfo> findAllBook(){
+    public List<BookInfoVo> findAllBook(){
+        System.out.println(""+bookService.findAllBook());
         return bookService.findAllBook();
     }
 

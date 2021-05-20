@@ -1,0 +1,48 @@
+server:
+  port: 1100
+spring:
+  redis:
+    database: 0
+    host: 192.168.195.129
+    port: 6379
+    password: 000000
+    jedis:
+      pool:
+        max-idle: 8
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+    timeout: 0
+  rabbitmq:
+    host: 192.168.195.129
+    port: 5675
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      simple:
+        concurrency: 5
+        ##手动ACK确认
+        acknowledge-mode: manual
+        max-concurrency: 10
+        prefetch: 1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.195.129:3307/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: chbccghgcgkcjchjl
+    typeEnum: com.alibaba.druid.pool.DruidDataSource
+    maxActive: 1000
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000

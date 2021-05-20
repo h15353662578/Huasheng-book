@@ -10,8 +10,10 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -28,16 +30,13 @@ public class TestServiceImpl implements TestService, ApplicationRunner {
 
     private BloomFilter<Integer> bf;
 
-//    @Resource
-//    private BloomFilter<Integer> bf;
-
     @Override
     public List<Test> selectById(String id,Integer stock){
         return testMapper.selectById(id,stock);
     }
 
     @Override
-    public Integer   update(String id) {
+    public Integer update(String id) {
         return testMapper.update(id);
     }
 
@@ -103,7 +102,7 @@ public class TestServiceImpl implements TestService, ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         List<Integer> userIdList = testMapper.findAll();
         if (CollectionUtils.isEmpty(userIdList)) return;
-        //创建布隆过滤器 误判率默认为3%
+        //创建布隆过滤器
         bf = BloomFilter.create(Funnels.integerFunnel(),userIdList.size());
         for (Integer id : userIdList) {
             bf.put(id);
@@ -111,6 +110,12 @@ public class TestServiceImpl implements TestService, ApplicationRunner {
         System.out.println("布隆过滤器"+userIdList);
     }
 
+    @Override
+    public Object sss(int id){
+        bf.put(id);
+        System.out.println("布隆过滤器"+bf.mightContain(id));
+        return id;
+    }
     /***
      * 判断id可能存在于布隆过滤器里面
      * @param id

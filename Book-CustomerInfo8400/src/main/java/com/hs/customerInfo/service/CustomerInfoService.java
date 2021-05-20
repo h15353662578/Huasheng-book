@@ -16,7 +16,7 @@ public interface CustomerInfoService {
 
     public void addCustomerInfo(CustomerInfo customerInfo);
 
-    public CustomerInfo findAll();
+    public List<CustomerInfo> findAll();
 
     public List<Map<BookInfo, BookOrder>> findAnd();
 }

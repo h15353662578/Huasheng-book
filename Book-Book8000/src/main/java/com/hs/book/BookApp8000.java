@@ -18,7 +18,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class BookApp8000 {
-
     public static void main(String[] args) {
         SpringApplication.run(BookApp8000.class,args);
     }

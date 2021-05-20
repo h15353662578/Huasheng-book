@@ -29,7 +29,7 @@ spring:
         tx-service-group: hs_tx_group
     nacos:
       discovery:
-        server-addr: 192.168.195.129:90
+        server-addr: 192.168.195.129:8848
         service: customer-service
 logging:
   level:
@@ -44,7 +44,7 @@ dubbo:
     name: customer-service #注册服务名称
     qos-enable: false #关闭dubbo在线运维工具
   registry:
-    address: nacos://192.168.195.129:90 #挂载到Nacos注册中心
+    address: nacos://192.168.195.129:8848 #挂载到Nacos注册中心
   cloud:
     subscribed-services: customer-account-service,customer-info-service #订阅的服务名称，默认订阅所有服务，provider无须订阅服务所以配置为 /
 feign:

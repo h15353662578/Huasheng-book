@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @Description
  */
 
-@Data
+
 public class CustomerAccount implements Serializable {
 
     private Long customerId;
@@ -24,4 +24,52 @@ public class CustomerAccount implements Serializable {
     private Integer used;
 
     private Integer residue;
+
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public Integer getCustomerShopNum() {
+        return customerShopNum;
+    }
+
+    public void setCustomerShopNum(Integer customerShopNum) {
+        this.customerShopNum = customerShopNum;
+    }
+
+    public Integer getCustomerState() {
+        return customerState;
+    }
+
+    public void setCustomerState(Integer customerState) {
+        this.customerState = customerState;
+    }
+
+    public Integer getUsed() {
+        return used;
+    }
+
+    public void setUsed(Integer used) {
+        this.used = used;
+    }
+
+    public Integer getResidue() {
+        return residue;
+    }
+
+    public void setResidue(Integer residue) {
+        this.residue = residue;
+    }
 }

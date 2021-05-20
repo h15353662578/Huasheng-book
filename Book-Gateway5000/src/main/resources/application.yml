@@ -32,6 +32,14 @@ spring:
           uri: http://localhost:8500
           predicates:
             - Path=/BookStorage/**
+        - id: book-test-service
+          uri: http://localhost1000
+          predicates:
+            - Path=/Test/**
+        - id: rabit-seervice
+          uri: http://localhost:1000
+          predicates:
+            - Path=/Rabbit/**
       filter:
         remove-hop-by-hop:
           headers:

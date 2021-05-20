@@ -1,6 +1,5 @@
 package com.hs.config;
 
-
 import com.alibaba.druid.filter.logging.Slf4jLogFilter;
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
@@ -112,6 +111,7 @@ public class DruidConfig {
     public void setDbUrl(String dbUrl) {
         this.dbUrl = dbUrl;
     }
+
     @Bean
     public DataSourceProxy dataSourceProxy(DataSource druidDataSource) {
         return new DataSourceProxy(druidDataSource);

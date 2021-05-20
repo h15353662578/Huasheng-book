@@ -23,7 +23,7 @@ public interface CustomerInfoMapper {
     public void addCustomerInfo(CustomerInfo customerInfo);
 
     @Select("select * from customer_info")
-    public CustomerInfo findAll();
+    public List<CustomerInfo> findAll();
 
     @Select("SELECT * FROM book_info UNION ALL SELECT * FROM book_storage")
     public List<Map<BookInfo, BookOrder>> findAnd();

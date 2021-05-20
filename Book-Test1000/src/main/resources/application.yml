@@ -39,6 +39,13 @@ spring:
         max-wait: -1
         min-idle: 0
     timeout: 0
+  rabbitmq:
+    host: 192.168.195.129
+    port: 5675
+    username: guest
+    password: guest
+    virtual-host: /
+
 #    nacos:
 #      discovery:
 #        server-addr: 192.168.195.129:3307

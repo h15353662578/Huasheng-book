@@ -1,10 +1,8 @@
 package com.hs.book.mapper;
 
 import com.hs.entity.BookInfo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import com.hs.entity.BookInfoVo;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -17,8 +15,8 @@ import java.util.List;
 @Mapper
 public interface BookMapper {
 
-    @Select("select * from book_info")
-    public List<BookInfo> findAllBook();
+    @Select("select book_id as name,residue as value from book_storage")
+    public List<BookInfoVo> findAllBook();
 
     @Insert("insert into book_info(book_name,book_price,book_type,book_state,book_stock)values" +
             "(#{bookName},#{bookPrice},#{bookType},#{bookState},#{bookStock})")

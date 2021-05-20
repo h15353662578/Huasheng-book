@@ -24,6 +24,10 @@
         <module>Book-Account8300</module>
         <module>Book-Stock8500</module>
         <module>Book-Test1000</module>
+        <module>Book-Rabbit1100</module>
+        <module>Book-Rabbit1200</module>
+        <module>Book-Hadoop3000</module>
+        <module>Book-AliTest2000</module>
     </modules>
 
     <properties>

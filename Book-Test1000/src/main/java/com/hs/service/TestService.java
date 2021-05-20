@@ -30,4 +30,6 @@ public interface TestService {
     public String insert(Test test);
 
     public boolean userIdExists(int id);
+
+    public Object sss(int id);
 }

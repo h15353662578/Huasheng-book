@@ -34,7 +34,7 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public CustomerInfo findAll(){
+    public List<CustomerInfo> findAll(){
         return customerInfoMapper.findAll();
     }
 

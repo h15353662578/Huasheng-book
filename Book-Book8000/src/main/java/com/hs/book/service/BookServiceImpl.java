@@ -2,6 +2,7 @@ package com.hs.book.service;
 
 import com.hs.book.mapper.BookMapper;
 import com.hs.entity.BookInfo;
+import com.hs.entity.BookInfoVo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,7 +21,8 @@ public class BookServiceImpl implements BookService{
     private BookMapper bookMapper;
 
     @Override
-    public List<BookInfo> findAllBook(){
+    public List<BookInfoVo> findAllBook(){
+        System.out.println(""+bookMapper.findAllBook());
         return bookMapper.findAllBook();
     }
 

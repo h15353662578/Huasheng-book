@@ -2,12 +2,16 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/Book-Account8300/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Book-AliTest2000/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Book8000/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Customer8100/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-CustomerInfo8400/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Gateway5000/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Book-Hadoop3000/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Order8200/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Book-Rabbit1100/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Book-Rabbit1200/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Stock8500/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Book-Test1000/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

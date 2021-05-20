@@ -108,9 +108,15 @@ public class TestController {
        }
     }
 
+
     @GetMapping("/insert")
     public void insert(Test test){
         testService.insert(test);
+    }
+
+    @RequestMapping("/sss")
+    public Object sss(int id){
+        return testService.sss(id);
     }
 }
 

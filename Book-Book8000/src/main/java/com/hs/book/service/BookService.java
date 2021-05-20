@@ -1,6 +1,8 @@
 package com.hs.book.service;
 
 import com.hs.entity.BookInfo;
+import com.hs.entity.BookInfoVo;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,7 @@ import java.util.List;
  */
 public interface BookService {
 
-    public List<BookInfo> findAllBook();
+    public List<BookInfoVo> findAllBook();
 
     public Integer addBook(BookInfo bookInfo);
 
