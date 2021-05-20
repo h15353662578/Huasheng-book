@@ -19,9 +19,17 @@ public class TestService {
     @Resource
     private NetBase64Utils netBase64Utils;
 
+    @Resource
+    private JuMeiService juMeiService;
+
     @GetMapping("/test")
     public String test(String url) throws IOException {
         String dsb = netBase64Utils.dsb(url);
         return dsb;
+    }
+
+    @PostMapping("/test2")
+    public void sfz(@RequestParam String idCardNo,@RequestParam String name) {
+        juMeiService.sfz(idCardNo,name);
     }
 }
