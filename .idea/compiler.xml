@@ -17,11 +17,16 @@
         <module name="Book-Gateway5000" />
         <module name="Book-Order8200" />
         <module name="Book-Test1000" />
+        <module name="Book-Netty-Client-2200" />
         <module name="Book-Common" />
+        <module name="Book-Netty-Server2400" />
         <module name="Book-AliTest2000" />
         <module name="Book-Book8000" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Book-Netty-Client2200" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -33,6 +38,9 @@
       <module name="Book-CustomerInfo8400" options="-parameters" />
       <module name="Book-Gateway5000" options="-parameters" />
       <module name="Book-Hadoop3000" options="-parameters" />
+      <module name="Book-Netty-Client-2200" options="-parameters" />
+      <module name="Book-Netty-Client2200" options="-parameters" />
+      <module name="Book-Netty-Server2400" options="-parameters" />
       <module name="Book-Order8200" options="-parameters" />
       <module name="Book-Rabbit1100" options="-parameters" />
       <module name="Book-Rabbit1200" options="-parameters" />

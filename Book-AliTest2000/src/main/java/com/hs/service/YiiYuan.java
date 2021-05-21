@@ -26,7 +26,7 @@ public class YiiYuan {
         headers.put("Authorization", "APPCODE " + appcode);
         Map<String, String> querys = new HashMap<String, String>();
         querys.put("area", area);
-        JSONObject jsonObject=null;
+        JSONObject jsonObject = null;
         try {
             HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
             jsonObject = JSONObject.parseObject(EntityUtils.toString(response.getEntity()));

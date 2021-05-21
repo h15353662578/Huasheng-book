@@ -28,6 +28,8 @@
         <module>Book-Rabbit1200</module>
         <module>Book-Hadoop3000</module>
         <module>Book-AliTest2000</module>
+        <module>Book-Netty-Client2200</module>
+        <module>Book-Netty-Server2400</module>
     </modules>
 
     <properties>

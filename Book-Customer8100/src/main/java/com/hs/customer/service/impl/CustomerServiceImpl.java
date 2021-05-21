@@ -1,11 +1,10 @@
 package com.hs.customer.service.impl;
 
 import com.hs.customer.mapper.CustomerMapper;
+import com.hs.customer.service.CustomerAccountService;
+import com.hs.customer.service.CustomerInfoService;
 import com.hs.customer.service.CustomerService;
-import com.hs.customerAccount.service.CustomerAccountService;
-import com.hs.customerInfo.service.CustomerInfoService;
 import com.hs.entity.Customer;
-import com.hs.entity.CustomerAccount;
 import com.hs.entity.CustomerInfo;
 import io.seata.spring.annotation.GlobalTransactional;
 import io.seata.tm.api.transaction.Propagation;
